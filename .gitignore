@@ -1,0 +1,7 @@
+_ReSharper.*
+obj/
+bin/
+*.user
+packages/
+*.suo
+GeneratedPackages/
