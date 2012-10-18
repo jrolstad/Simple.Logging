@@ -12,6 +12,7 @@
     <projectUrl>http://github.com/jrolstad/Simple.Logging</projectUrl>
     <dependencies>
       <dependency id="AWSSDK" version="1.5.5.1"/>
+      <dependency id="Simple.Logging" version="$version$"/>
     </dependencies>
   </metadata>
   <files>
