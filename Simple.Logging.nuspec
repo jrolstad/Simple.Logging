@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>Simple.Logging</id>
+    <version>$version$</version>
+    <authors>Josh Rolstad</authors>
+    <owners>Josh Rolstad</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Simple logging framework interfaces</description>
+    <copyright>Copyright 2012</copyright>
+    <tags>Logging</tags>
+    <projectUrl>http://github.com/jrolstad/Simple.Logging</projectUrl>
+  </metadata>
+  <files>
+    <file src="Simple.Logging\bin\Release\Simple.Logging.dll" target="lib/net40" />
+  </files>
+</package>

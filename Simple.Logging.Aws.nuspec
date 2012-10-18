@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>Simple.Logging.Aws</id>
+    <version>$version$</version>
+    <authors>Josh Rolstad</authors>
+    <owners>Josh Rolstad</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Simple logging tool that logs messages and Exceptions to Amazon SimpleDb / S3</description>
+    <copyright>Copyright 2012</copyright>
+    <tags>Logging AWS Amazon SimpleDB S3</tags>
+    <projectUrl>http://github.com/jrolstad/Simple.Logging</projectUrl>
+    <dependencies>
+      <dependency id="AWSSDK" version="1.5.5.1"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="Simple.Logging.Aws\bin\Release\Simple.Logging.Aws.dll" target="lib/net40" />
+  </files>
+</package>
