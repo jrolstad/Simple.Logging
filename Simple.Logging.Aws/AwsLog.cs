@@ -37,20 +37,20 @@ namespace Simple.Logging.Aws
 
         public void Log(LogLevel level, string message)
         {
-            LogMessageAsync(level, message);
+            LogMessage(level, message);
         }
 
         public void Error(string message, Exception exception)
         {
-           LogMessageAsync(LogLevel.Error, message,exception);
+           LogMessage(LogLevel.Error, message,exception);
         }
 
         public void Fatal(string message, Exception exception)
         {
-            LogMessageAsync(LogLevel.Fatal, message, exception);
+            LogMessage(LogLevel.Fatal, message, exception);
         }
 
-        private void LogMessageAsync(LogLevel level, string message, Exception exception = null)
+        private void LogMessage(LogLevel level, string message, Exception exception = null)
         {
             var logMessage = new LogMessage
             {
@@ -66,15 +66,16 @@ namespace Simple.Logging.Aws
                 LogName = _logName
             };
 
+            SaveToSimpleDb(logMessage);
             SaveToS3(logMessage);
 
-            SaveToSimpleDb(logMessage);
         }
 
         private void SaveToSimpleDb(LogMessage logMessage)
         {
             var simpleDbRequest = _logMessageSimpleDbMapper.Map(logMessage);
             _simpleDbClient.PutAttributes(simpleDbRequest);
+           
 
         }
 
