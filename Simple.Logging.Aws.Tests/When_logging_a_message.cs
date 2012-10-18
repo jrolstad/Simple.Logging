@@ -49,6 +49,14 @@ namespace Simple.Logging.Aws.Tests
             Assert.That(_simpleDbRequest,Is.Not.Null);
         }
 
+
+        [Test]
+        public void Then_an_exception_is_not_logged()
+        {
+            // Assert
+            Assert.That(_s3Request,Is.Null);
+        }
+
         [Test]
         public void Then_the_item_is_logged_to_the_simpledb_domain()
         {

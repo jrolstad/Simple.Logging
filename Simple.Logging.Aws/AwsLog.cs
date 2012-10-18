@@ -73,29 +73,17 @@ namespace Simple.Logging.Aws
 
         private void SaveToSimpleDb(LogMessage logMessage)
         {
-            Action saveToSimpleDbAction = () =>
-                {
-                    var simpleDbRequest = _logMessageSimpleDbMapper.Map(logMessage);
-                    _simpleDbClient.PutAttributes(simpleDbRequest);
-                };
+            var simpleDbRequest = _logMessageSimpleDbMapper.Map(logMessage);
+            _simpleDbClient.PutAttributes(simpleDbRequest);
 
-
-            var saveToSimpleDbTask = new Task(saveToSimpleDbAction);
-            saveToSimpleDbTask.Start();
         }
 
         private void SaveToS3(LogMessage logMessage)
         {
             if (logMessage.Exception != null)
             {
-                Action saveToS3Action = () =>
-                    {
-                        var s3Request = _logMessageS3Mapper.Map(logMessage);
-                        _s3Client.PutObject(s3Request);
-                    };
-
-                var saveToS3Task = new Task(saveToS3Action);
-                saveToS3Task.Start();
+                var s3Request = _logMessageS3Mapper.Map(logMessage);
+                _s3Client.PutObject(s3Request);
             }
         }
     }
